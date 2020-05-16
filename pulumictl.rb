@@ -2,35 +2,20 @@
 class Pulumictl < Formula
   desc "A swiss army knife for Pulumi development"
   homepage "https://pulumi.io"
-  version "0.0.1"
+  version "0.0.1-alpha"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1/pulumictl-v0.0.1-darwin-amd64.tar.gz"
-    sha256 "cdc571fec19cdc4a292f284304160cac2a05c6e68ca03db4f442164e831449f9"
+    url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1-alpha/pulumictl-v0.0.1-alpha-darwin-amd64.tar.gz"
+    sha256 "95b1e8d331f9e71c5d3007e420a375e88f55d0b6ecec4f2148db9f851543dcd5"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1/pulumictl-v0.0.1-linux-amd64.tar.gz"
-      sha256 "f30601d745d376c067ce79e6551dedbd6aec0d5e3d6459adfdf723eb35e4c550"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1-alpha/pulumictl-v0.0.1-alpha-linux-amd64.tar.gz"
+      sha256 "7dc96689a2241d149e0c9ff8c0a3dab9047f11933a516c189a72c3ad18fbd6ca"
     end
-  end
-  
-  head do
-    url "https://github.com/pulumi/pulumictl"
-    depends_on "go@1.13" if build.head?
   end
 
   def install
-    if build.head?
-      ENV["GOPATH"] = buildpath
-      ENV["GO111MODULE"] = "on"
-      dir = buildpath/"src/github.com/pulumi/pulumictl"
-      dir.install buildpath.children
-      system "go", "build", "-ldflags=-X github.com/pulumi/pulumictl/pkg/version.Version=0.0.1" "#{dir}/cmd/pulumictl/main.go"
-      bin.install Dir["#{buildpath}/pulumictl"]
-    end
-    if build.stable?
-      bin.install "pulumictl"
-    end
+    bin.install "pulumictl"
   end
 end

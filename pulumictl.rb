@@ -7,11 +7,11 @@ class Pulumictl < Formula
 
   if OS.mac?
     url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1/pulumictl-v0.0.1-darwin-amd64.tar.gz"
-    sha256 "bf805ca919d5bc9f4318082c8dc87ddb146346dda45aa91ae168b804eee10ca8"
+    sha256 "cdc571fec19cdc4a292f284304160cac2a05c6e68ca03db4f442164e831449f9"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1/pulumictl-v0.0.1-linux-amd64.tar.gz"
-      sha256 "c6a8ca9a4ef5a0c1670c193d5dacecffa2b418edc46e089483b3a50eb24287e6"
+      sha256 "f30601d745d376c067ce79e6551dedbd6aec0d5e3d6459adfdf723eb35e4c550"
     end
   end
   
@@ -26,7 +26,7 @@ class Pulumictl < Formula
       ENV["GO111MODULE"] = "on"
       dir = buildpath/"src/github.com/pulumi/pulumictl"
       dir.install buildpath.children
-      system "go", "build", "-ldflags=-X github.com/pulumi/pulumictl/pkg/version.Version=0.0.1"
+      system "go", "build", "-ldflags=-X github.com/pulumi/pulumictl/pkg/version.Version=0.0.1" "#{dir}/cmd/pulumictl/main.go"
       bin.install Dir["#{buildpath}/pulumictl"]
     end
     if build.stable?

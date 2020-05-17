@@ -7,11 +7,11 @@ class Pulumictl < Formula
 
   if OS.mac?
     url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1-alpha/pulumictl-v0.0.1-alpha-darwin-amd64.tar.gz"
-    sha256 "41b672db1d8a7115c96b5ea9af49eac7e55cd6598d0fbf17cc19bfb829f7e35f"
+    sha256 "955605e1058a6e5f422b5b9ce6b8d84458c8d0ffaaae49b4f9a20b2dd77828c1"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/pulumi/pulumictl/releases/download/v0.0.1-alpha/pulumictl-v0.0.1-alpha-linux-amd64.tar.gz"
-      sha256 "41b7cc982901598fc3c78fded31a415dd96edc8a0506fc4742ad4b86026ad12c"
+      sha256 "3bcd7f530a4131dd739414d44f63fcf0e7de6a3fa21fbfaba19dc597343c38a1"
     end
   end
 

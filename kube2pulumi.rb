@@ -2,16 +2,16 @@
 class Kube2pulumi < Formula
   desc "Convert Kubernetes manifests to Pulumi code"
   homepage "https://pulumi.io"
-  version "0.0.4"
+  version "0.0.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.4/kube2pulumi-v0.0.4-darwin-amd64.tar.gz"
-    sha256 "f802683313bfe1f4882bb1b41e58641470033346c7859b78e2e16b93bf2862c5"
+    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.5/kube2pulumi-v0.0.5-darwin-amd64.tar.gz"
+    sha256 "b528fd4c06484459515628c8f7d216b7202ab2a837d6f973d21003cabfb55db4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.4/kube2pulumi-v0.0.4-linux-amd64.tar.gz"
-      sha256 "954f2914099597dd8b19126d8d0052bda8409bbbab63103c9d42f6afeb87ea79"
+      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.5/kube2pulumi-v0.0.5-linux-amd64.tar.gz"
+      sha256 "9b51f0c6978a623ad938787d539f2891111257283145139c2db72f84364de89e"
     end
   end
 

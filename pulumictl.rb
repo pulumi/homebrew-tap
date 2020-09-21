@@ -2,16 +2,16 @@
 class Pulumictl < Formula
   desc "A swiss army knife for Pulumi development"
   homepage "https://pulumi.io"
-  version "0.0.10"
+  version "0.0.11"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pulumi/pulumictl/releases/download/v0.0.10/pulumictl-v0.0.10-darwin-amd64.tar.gz"
-    sha256 "5bb05be5268b1cb99f18fb0011534119852cea18402d59cd3f7fb3b6e53c3432"
+    url "https://github.com/pulumi/pulumictl/releases/download/v0.0.11/pulumictl-v0.0.11-darwin-amd64.tar.gz"
+    sha256 "184f45fd26cde09f83cf58ed837cd8efe5896027b09a85229156996f5592cea6"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.10/pulumictl-v0.0.10-linux-amd64.tar.gz"
-      sha256 "dd9ad1de7aa673c704c61d6e0675bf18dc18ddac37a4a676972acf1e2bd5fc4b"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.11/pulumictl-v0.0.11-linux-amd64.tar.gz"
+      sha256 "58c1f0722acda197d9ea0eb188b84ecbea734a15421df27111a60217c3f021c4"
     end
   end
 

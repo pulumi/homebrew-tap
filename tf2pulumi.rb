@@ -11,11 +11,11 @@ class Tf2pulumi < Formula
   end
 
   if OS.mac?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.9.0/tf2pulumi-v0.9.0-darwin-amd64.tar.gz"
+    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.9.0/tf2pulumi-v0.9.0-darwin-x64.tar.gz"
     sha256 "fdecd3cd7734af74ece5f0f07d2bf4e67ebf372be7fb20003b0805ce91159593"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.9.0/tf2pulumi-v0.9.0-linux-amd64.tar.gz"
+      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.9.0/tf2pulumi-v0.9.0-linux-x64.tar.gz"
       sha256 "525ebb6a4fac9ce9ee77942c65f4c08228d86fa582a385f0675001c4a753d096"
     end
   end

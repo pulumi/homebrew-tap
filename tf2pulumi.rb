@@ -2,7 +2,7 @@
 class Tf2pulumi < Formula
   desc "A tool to convert Terraform projects to Pulumi TypeScript programs"
   homepage "pulumi.io"
-  version "0.9.0"
+  version "0.10.0"
   bottle :unneeded
 
   head do
@@ -11,12 +11,12 @@ class Tf2pulumi < Formula
   end
 
   if OS.mac?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.9.0/tf2pulumi-v0.9.0-darwin-x64.tar.gz"
-    sha256 "fdecd3cd7734af74ece5f0f07d2bf4e67ebf372be7fb20003b0805ce91159593"
+    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.10.0/tf2pulumi-v0.10.0-darwin-x64.tar.gz"
+    sha256 "a5c3d6310ac987fd963f0aaff33fd01b99387bd05e5387b0da3b2208059ddcd8"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.9.0/tf2pulumi-v0.9.0-linux-x64.tar.gz"
-      sha256 "525ebb6a4fac9ce9ee77942c65f4c08228d86fa582a385f0675001c4a753d096"
+      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.10.0/tf2pulumi-v0.10.0-linux-x64.tar.gz"
+      sha256 "10b5176363fcaa2e17b04b770f250a2afee1eb598a6dc13c463aec1cd8a1a3a6"
     end
   end
 

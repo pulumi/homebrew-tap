@@ -5,16 +5,24 @@
 class Kube2pulumi < Formula
   desc "Convert Kubernetes manifests to Pulumi code"
   homepage "https://pulumi.io"
-  version "0.0.8"
+  version "0.0.9"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.8/kube2pulumi-v0.0.8-darwin-amd64.tar.gz"
-    sha256 "c3d4927900aca81c8fee05994400302a8799211741f0ba29cdbe2ae9b433c020"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.9/kube2pulumi-v0.0.9-darwin-amd64.tar.gz"
+    sha256 "4e0ac907ccb8545591da6289574cb62fa365bf117e92ac1eb9493a095177a8d3"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.9/kube2pulumi-v0.0.9-darwin-arm64.tar.gz"
+    sha256 "5b057f85a3ac113a8d45cad87f2d87028f0282b6f36260bd534f0e3c89238ea7"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.8/kube2pulumi-v0.0.8-linux-amd64.tar.gz"
-    sha256 "b1bd42b98be77e98b3ce272782f1c46c19f7abe2592000e21da0967eadf0b701"
+    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.9/kube2pulumi-v0.0.9-linux-amd64.tar.gz"
+    sha256 "d7f25fde9c549b73e9ad14f8ba520a2657020b0092bceb85112f24b00c78eb83"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.9/kube2pulumi-v0.0.9-linux-arm64.tar.gz"
+    sha256 "ae00aea39c3da49df2f27ee75ba3e57baab563335017a6e2794233eef813b2cc"
   end
 
   def install

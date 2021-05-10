@@ -5,19 +5,32 @@
 class Tf2pulumi < Formula
   desc "A tool to convert Terraform projects to Pulumi programs"
   homepage "https://pulumi.io"
-  version "0.11.0"
+  version "0.11.1"
+  license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.0/tf2pulumi-v0.11.0-darwin-x64.tar.gz"
-    sha256 "66e04339b53cf39d6022483b3c318998c9046fd99b365333a27297357ddc4bf5"
+    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-darwin-x64.tar.gz"
+    sha256 "6c2fea8bc21bbdbb39d6cc6545dc9d38074279ef2f2adaf2fd457fc9e5c520d3"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-darwin-arm64.tar.gz"
+    sha256 "46cfff9c70f128725f3df6e0b7e449ba520ad323eaa497919e20ba94e55ca297"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.0/tf2pulumi-v0.11.0-linux-x64.tar.gz"
-    sha256 "53488eed961ecf032761a5251de290ed780a12733abc8067450a32f0a54af736"
+    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-linux-x64.tar.gz"
+    sha256 "5d91f46f659ca4ccf65385f4154e9915e1ff33f85ea201bcc57349db49e9f12d"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-linux-arm64.tar.gz"
+    sha256 "201f3d8f1974cac8f88b2e1717459fddee8891a14a4d512e8dbff138f11f935c"
   end
 
   def install
     bin.install "tf2pulumi"
+  end
+
+  test do
+    system "#{bin}/tf2pulumi version"
   end
 end

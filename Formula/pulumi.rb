@@ -11,11 +11,11 @@ class Pulumi < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-darwin-x64.tar.gz"
-    sha256 "eb94d3918ad5a688eb17ec8fd0edf149ef703329c4470bdb1b785920c6ee46e3"
+    sha256 "d9ef0cecc454585bfd57a17ca04b8b56b6ea496e1b53cae1d3fab60c9de9a70b"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-darwin-arm64.tar.gz"
-    sha256 "1c66d909a463685a34371052a9f765208f694c8ce8515e4ccbbb0c3bf90af770"
+    sha256 "eb94d3918ad5a688eb17ec8fd0edf149ef703329c4470bdb1b785920c6ee46e3"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-linux-x64.tar.gz"

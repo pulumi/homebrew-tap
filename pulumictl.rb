@@ -2,16 +2,23 @@
 class Pulumictl < Formula
   desc "A swiss army knife for Pulumi development"
   homepage "https://pulumi.io"
-  version "0.0.24"
+  version "0.0.25"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/pulumi/pulumictl/releases/download/v0.0.24/pulumictl-v0.0.24-darwin-amd64.tar.gz"
-    sha256 "5d641479d8242047b267365b9028b4f795819916de1c611834704c1dfd426487"
+    url "https://github.com/pulumi/pulumictl/releases/download/v0.0.25/pulumictl-v0.0.25-darwin-amd64.tar.gz"
+    sha256 "9e2128043a2b1543a0daea86549b0bb7e170d19f16ad64bdbac2c6421b20bec4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.24/pulumictl-v0.0.24-linux-amd64.tar.gz"
-      sha256 "7509ce85d0c1952d816a06cc2f39181c233cf8a6de1a3e53514aa40e71200c3b"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.25/pulumictl-v0.0.25-linux-amd64.tar.gz"
+      sha256 "27a428cd27ef0469d56a74ffd456658b3f82424be1a295e530d6953825954c25"
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pulumi/pulumictl/releases/download/v0.0.25/pulumictl-v0.0.25-linux-arm64.tar.gz"
+        sha256 "f17094744405e104362ce8220648234e9afa489c05aa5d1fd11fd9db3b087204"
+      else
+      end
     end
   end
 

@@ -11,7 +11,7 @@ class Pulumi < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-darwin-x64.tar.gz"
-    sha256 "fe4407e9269aee5b82137e14bcef2667bb07eaca96a69a400947b2cfe0278436"
+    sha256 "eb94d3918ad5a688eb17ec8fd0edf149ef703329c4470bdb1b785920c6ee46e3"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-darwin-arm64.tar.gz"
@@ -19,11 +19,11 @@ class Pulumi < Formula
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-linux-x64.tar.gz"
-    sha256 "45973c93aa0e1cb993f845fbda41798672518978667369362ac71a810e360f27"
+    sha256 "879420835243873760a7a4b64e4fff5ec2ac85540d07dd05e143ac2218f02e93"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/pulumi/pulumi/releases/download/v3.2.1/pulumi-v3.2.1-linux-arm64.tar.gz"
-    sha256 "98f18a82d14ae7330f8fb94f0be8c585eb4b49be06dca18de1097a647553954f"
+    sha256 "af69944aafa899545b9b5949b44c414e82649de1fdc21f56c454bac6bf9a7357"
   end
 
   conflicts_with "pulumi"

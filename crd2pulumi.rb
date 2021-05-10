@@ -5,16 +5,24 @@
 class Crd2pulumi < Formula
   desc "Generate typed CustomResources in Pulumi from Kubernetes CRDs"
   homepage "https://pulumi.com"
-  version "1.0.6"
+  version "1.0.7"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.6/crd2pulumi-v1.0.6-darwin-amd64.tar.gz"
-    sha256 "64be28356132a51069ab24c5d0a1d60240ce3158d26e3b0c420474e659ecda63"
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-darwin-amd64.tar.gz"
+    sha256 "fe4407e9269aee5b82137e14bcef2667bb07eaca96a69a400947b2cfe0278436"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-darwin-arm64.tar.gz"
+    sha256 "1c66d909a463685a34371052a9f765208f694c8ce8515e4ccbbb0c3bf90af770"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.6/crd2pulumi-v1.0.6-linux-amd64.tar.gz"
-    sha256 "d2d5ae693efc95ee1b6604188b0195ec80e7ed0d44e91d181884a32bec751642"
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-linux-amd64.tar.gz"
+    sha256 "45973c93aa0e1cb993f845fbda41798672518978667369362ac71a810e360f27"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-linux-arm64.tar.gz"
+    sha256 "98f18a82d14ae7330f8fb94f0be8c585eb4b49be06dca18de1097a647553954f"
   end
 
   def install

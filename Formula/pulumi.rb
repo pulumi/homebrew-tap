@@ -6,7 +6,7 @@ class Pulumi < Formula
   desc "Pulumi - Modern Infrastructure as Code. Any cloud, any language"
   homepage "https://pulumi.com"
   version "3.2.1"
-  license: "apache-2.0"
+  license "apache-2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?

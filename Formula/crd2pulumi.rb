@@ -5,27 +5,32 @@
 class Crd2pulumi < Formula
   desc "Generate typed CustomResources in Pulumi from Kubernetes CRDs"
   homepage "https://pulumi.com"
-  version "1.0.7"
+  version "1.0.8"
+  license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-darwin-amd64.tar.gz"
-    sha256 "fe4407e9269aee5b82137e14bcef2667bb07eaca96a69a400947b2cfe0278436"
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-darwin-amd64.tar.gz"
+    sha256 "e866af294ef62fd4a86855b3adf74806e0d12bbde0e6ceb3f6d3be66d1b7c801"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-darwin-arm64.tar.gz"
-    sha256 "1c66d909a463685a34371052a9f765208f694c8ce8515e4ccbbb0c3bf90af770"
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-darwin-arm64.tar.gz"
+    sha256 "3f8e576640628049f8ef5058401f94a526d737e0f5bfc3c18d6e32805ac0d18a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-linux-amd64.tar.gz"
-    sha256 "45973c93aa0e1cb993f845fbda41798672518978667369362ac71a810e360f27"
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-linux-amd64.tar.gz"
+    sha256 "21b778983248741b88c9e0d58ce992f70cb8396920afa576552ebfb76759b712"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.7/crd2pulumi-v1.0.7-linux-arm64.tar.gz"
-    sha256 "98f18a82d14ae7330f8fb94f0be8c585eb4b49be06dca18de1097a647553954f"
+    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-linux-arm64.tar.gz"
+    sha256 "09f14e38da45d9b2a6b58027437015d00f0c3805204f9a5b273ad53bf07ee279"
   end
 
   def install
     bin.install "crd2pulumi"
+  end
+
+  test do
+    system "#{bin}/crd2pulumi version"
   end
 end

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Add Pulumi Homebrew Tap
+        run: brew tap pulumi/tap .
+      - name: Try to Install Pulumi
+        run: brew install --formula ./Formula/pulumi.rb --verbose
+      - name: Pulumi Version Details
+        id: vars
+        run: |
+          which pulumi
+          echo ::set-output name=installed-version::$(pulumi version)
+          echo ::set-output name=expected-version::v$(curl -sS https://www.pulumi.com/latest-version)
+      - name: Error if incorrect version found
+        if: steps.vars.outputs.expected-version != steps.vars.outputs.installed-version
+        run: |
+          echo "Expected version ${{ steps.vars.outputs.expected-version }} but found ${{ steps.vars.outputs.installed-version }}"
+          exit 1
+      - name: Test Pulumi
+        run: |
+          mkdir /tmp/pulumi-test
+          cd /tmp/pulumi-test
+          pulumi login --local
+          pulumi new typescript -y
+          pulumi up --yes --non-interactive
+          pulumi destroy --yes --non-interactive
+        env:
+          PULUMI_CONFIG_PASSPHRASE: password

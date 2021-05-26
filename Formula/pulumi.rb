@@ -29,7 +29,7 @@ class Pulumi < Formula
   conflicts_with "pulumi"
 
   def install
-    bin.install "pulumi*"
+    bin.install Dir["*"]
 
     # Install shell completions
     (bash_completion/"pulumi.bash").write Utils.safe_popen_read("#{bin}/pulumi gen-completion bash")

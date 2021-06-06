@@ -5,25 +5,30 @@
 class Pulumi < Formula
   desc "Pulumi - Modern Infrastructure as Code. Any cloud, any language "
   homepage "https://pulumi.com"
-  version "3.3.1"
+  version "3.4.0"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/pulumi/releases/download/v3.3.1/pulumi-v3.3.1-darwin-x64.tar.gz"
-    sha256 "7a962a92f337608cb4cc7f640c3bd4cb1b676fdc217bedda520e555c08e62266"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.4.0/pulumi-v3.4.0-darwin-x64.tar.gz"
+      sha256 "2291b54de5c917954937f2fd807dbd4873b11d3705155d0d5d7378b216a23199"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.4.0/pulumi-v3.4.0-darwin-arm64.tar.gz"
+      sha256 "9228b60b5a5d81f6fd243af829501e68589e8109887037313ce32e87eeb5953c"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/pulumi/pulumi/releases/download/v3.3.1/pulumi-v3.3.1-darwin-arm64.tar.gz"
-    sha256 "7bc9f116fe650057b4aafbd18ddbb24d4bdb6d2c22627c77396ae84505103af1"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/pulumi/releases/download/v3.3.1/pulumi-v3.3.1-linux-x64.tar.gz"
-    sha256 "4ea473a8fbd90fe6c449f4576140c5ddfd1bd476e8b6da497485b91b5ee91bd7"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pulumi/pulumi/releases/download/v3.3.1/pulumi-v3.3.1-linux-arm64.tar.gz"
-    sha256 "195991016dd4f1fc9938e5bb476f10beec0e9109842ed43fe6cf7a3e012a4046"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.4.0/pulumi-v3.4.0-linux-x64.tar.gz"
+      sha256 "a3e6060b44da382d20f0688a451e6d7ff8e2637fe7492921908824ca4fd624f6"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.4.0/pulumi-v3.4.0-linux-arm64.tar.gz"
+      sha256 "aa6bf09db324a224259d9f027377c6c76328b27d9be852d8947eb7df0cbfd4cf"
+    end
   end
 
   conflicts_with "pulumi"

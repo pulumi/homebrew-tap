@@ -5,29 +5,29 @@
 class Pulumi < Formula
   desc "Pulumi - Modern Infrastructure as Code. Any cloud, any language "
   homepage "https://pulumi.com"
-  version "3.7.0"
+  version "3.7.1"
   license "Apache-2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.7.0/pulumi-v3.7.0-darwin-x64.tar.gz"
-      sha256 "ef6bbee97f4b9ae811f8f17bccd8fae9c347efb98cf1d98790955e2e925cb1d1"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.7.1/pulumi-v3.7.1-darwin-x64.tar.gz"
+      sha256 "449804c5216fba81ccf5deba223dac69c0d6fa95ac8b9443c8794ab7a825ca90"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.7.0/pulumi-v3.7.0-darwin-arm64.tar.gz"
-      sha256 "9f6ab2ac62abe66645c4c47b7025598d75b4157713888cf674c103daf0aec78c"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.7.1/pulumi-v3.7.1-darwin-arm64.tar.gz"
+      sha256 "2cbd1e78833a651de0b4033258b4d13604702a932f4503fe9c4fd41e52bb9ed9"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.7.0/pulumi-v3.7.0-linux-x64.tar.gz"
-      sha256 "6a30d95eb31e9c7e2b8904fa00977f5a0f1b43fd55da80b7d4753cd1d0414f86"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.7.1/pulumi-v3.7.1-linux-x64.tar.gz"
+      sha256 "29c91a896e287a231b112f4298363330d0d3d9d33c2c14f50ead0654f9679855"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.7.0/pulumi-v3.7.0-linux-arm64.tar.gz"
-      sha256 "6194bcf60d43ceb5bc89cda399f81151dba59d703e7ecda3574c56ceb2ba7633"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.7.1/pulumi-v3.7.1-linux-arm64.tar.gz"
+      sha256 "9b34b3ae5849de1e3ced5e9d133ce1d73f7961ab02bd7727a259c4bb1577b93a"
     end
   end
 

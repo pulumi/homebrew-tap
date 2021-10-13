@@ -5,25 +5,30 @@
 class Crd2pulumi < Formula
   desc "Generate typed CustomResources in Pulumi from Kubernetes CRDs"
   homepage "https://pulumi.com"
-  version "1.0.8"
+  version "1.0.9"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-darwin-amd64.tar.gz"
-    sha256 "e866af294ef62fd4a86855b3adf74806e0d12bbde0e6ceb3f6d3be66d1b7c801"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-darwin-arm64.tar.gz"
+      sha256 "a972ce1f71f2656342679a62fc97588b4aef68aaad50a2f8a1c03a7da53cdb47"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-darwin-amd64.tar.gz"
+      sha256 "6e5192742e18c317df0962a5ed272b1bfaa0d360c2e9b5ad0ee2087ad968ede0"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-darwin-arm64.tar.gz"
-    sha256 "3f8e576640628049f8ef5058401f94a526d737e0f5bfc3c18d6e32805ac0d18a"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-linux-amd64.tar.gz"
-    sha256 "21b778983248741b88c9e0d58ce992f70cb8396920afa576552ebfb76759b712"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.8/crd2pulumi-v1.0.8-linux-arm64.tar.gz"
-    sha256 "09f14e38da45d9b2a6b58027437015d00f0c3805204f9a5b273ad53bf07ee279"
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-linux-arm64.tar.gz"
+      sha256 "2d22ba965372812031304d1b46f3af061aceec580154b29edf43ca3490e7799e"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-linux-amd64.tar.gz"
+      sha256 "ea66324d67c1f88907385c2e6ebfa6c7e12cced01c57675a4c64d77b41a5b532"
+    end
   end
 
   def install

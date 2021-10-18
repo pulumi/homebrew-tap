@@ -5,29 +5,29 @@
 class Crd2pulumi < Formula
   desc "Generate typed CustomResources in Pulumi from Kubernetes CRDs"
   homepage "https://pulumi.com"
-  version "1.0.9"
+  version "1.0.10"
   license "Apache-2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-darwin-arm64.tar.gz"
-      sha256 "a972ce1f71f2656342679a62fc97588b4aef68aaad50a2f8a1c03a7da53cdb47"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.10/crd2pulumi-v1.0.10-darwin-arm64.tar.gz"
+      sha256 "d96f62238b800a1eeb534fb768e3ac24e1f7454b6acd4dddbbe30ef7fe572b3e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-darwin-amd64.tar.gz"
-      sha256 "6e5192742e18c317df0962a5ed272b1bfaa0d360c2e9b5ad0ee2087ad968ede0"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.10/crd2pulumi-v1.0.10-darwin-amd64.tar.gz"
+      sha256 "dd68186efa232df702acea1e7568c0deeb0704b577756c70a816763fa6bda5f8"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-linux-arm64.tar.gz"
-      sha256 "2d22ba965372812031304d1b46f3af061aceec580154b29edf43ca3490e7799e"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.10/crd2pulumi-v1.0.10-linux-arm64.tar.gz"
+      sha256 "6c4626dfd5cc8a29af45676458640cedad0e068e9acac727ad422ebfdfd96238"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.9/crd2pulumi-v1.0.9-linux-amd64.tar.gz"
-      sha256 "ea66324d67c1f88907385c2e6ebfa6c7e12cced01c57675a4c64d77b41a5b532"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.0.10/crd2pulumi-v1.0.10-linux-amd64.tar.gz"
+      sha256 "ef1cb401b8f9f851a9259af30120e8f0d2aa1846cb7866bb2c83b1770998d4ae"
     end
   end
 

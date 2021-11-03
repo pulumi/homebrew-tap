@@ -5,42 +5,68 @@
 class Pulumi < Formula
   desc "Pulumi - Modern Infrastructure as Code. Any cloud, any language "
   homepage "https://pulumi.com"
-  version "3.16.0"
+  version "3.17.0"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.16.0/pulumi-v3.16.0-darwin-x64.tar.gz"
-      sha256 "4defdbe9713101f8fb258793877e1e4a6f12e3f15278fea6e384f533213806ad"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.16.0/pulumi-v3.16.0-darwin-arm64.tar.gz"
-      sha256 "79b0b5b58ea2c95be6c62fc6c3917ed9cba86b86d05e4cf27befbfd86df8eb4c"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.17.0/pulumi-v3.17.0-darwin-arm64.tar.gz"
+      sha256 "527ae66bd645024ee807bd91bdf74ec290714378591a4dc664e9061bffd7af78"
+
+      def install
+        bin.install Dir["*"]
+
+        # Install shell completions
+        (bash_completion/"pulumi.bash").write Utils.safe_popen_read("#{bin}/pulumi gen-completion bash")
+        (zsh_completion/"_pulumi").write Utils.safe_popen_read("#{bin}/pulumi gen-completion zsh")
+        (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.17.0/pulumi-v3.17.0-darwin-x64.tar.gz"
+      sha256 "fc38ebfc318dcc4e6f403f59c585b09254c8b64dee939601d266ffc7af532ba8"
+
+      def install
+        bin.install Dir["*"]
+
+        # Install shell completions
+        (bash_completion/"pulumi.bash").write Utils.safe_popen_read("#{bin}/pulumi gen-completion bash")
+        (zsh_completion/"_pulumi").write Utils.safe_popen_read("#{bin}/pulumi gen-completion zsh")
+        (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.16.0/pulumi-v3.16.0-linux-arm64.tar.gz"
-      sha256 "e1fab709fac9a811abede27451ba7ad49ac5275448deaed2a86f5389c97d724a"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.17.0/pulumi-v3.17.0-linux-arm64.tar.gz"
+      sha256 "8bbc8d4553a38410b7be46ecfbaf8f19a7738289f56dfd98a777082d1ba9cbda"
+
+      def install
+        bin.install Dir["*"]
+
+        # Install shell completions
+        (bash_completion/"pulumi.bash").write Utils.safe_popen_read("#{bin}/pulumi gen-completion bash")
+        (zsh_completion/"_pulumi").write Utils.safe_popen_read("#{bin}/pulumi gen-completion zsh")
+        (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.16.0/pulumi-v3.16.0-linux-x64.tar.gz"
-      sha256 "6f7548183203a031aca571f851e00de553e8a4fde85910633cb22dcde7a32f31"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.17.0/pulumi-v3.17.0-linux-x64.tar.gz"
+      sha256 "548d8e6e17eacff234b5672823008f7604cb7da26b41d4f8c3a69bba25ce3fd9"
+
+      def install
+        bin.install Dir["*"]
+
+        # Install shell completions
+        (bash_completion/"pulumi.bash").write Utils.safe_popen_read("#{bin}/pulumi gen-completion bash")
+        (zsh_completion/"_pulumi").write Utils.safe_popen_read("#{bin}/pulumi gen-completion zsh")
+        (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
+      end
     end
   end
 
   conflicts_with "pulumi"
-
-  def install
-    bin.install Dir["*"]
-
-    # Install shell completions
-    (bash_completion/"pulumi.bash").write Utils.safe_popen_read("#{bin}/pulumi gen-completion bash")
-    (zsh_completion/"_pulumi").write Utils.safe_popen_read("#{bin}/pulumi gen-completion zsh")
-    (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
-  end
 
   test do
     system "#{bin}/pulumi version"

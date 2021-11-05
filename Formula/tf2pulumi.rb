@@ -7,7 +7,6 @@ class Tf2pulumi < Formula
   homepage "https://pulumi.io"
   version "0.11.1"
   license "Apache-2.0"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-darwin-x64.tar.gz"

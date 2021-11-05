@@ -7,7 +7,6 @@ class Pulumictl < Formula
   homepage "https://pulumi.io"
   version "0.0.28"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?

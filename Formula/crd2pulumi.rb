@@ -7,7 +7,6 @@ class Crd2pulumi < Formula
   homepage "https://pulumi.com"
   version "1.0.10"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?

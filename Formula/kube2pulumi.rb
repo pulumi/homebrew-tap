@@ -7,7 +7,6 @@ class Kube2pulumi < Formula
   homepage "https://pulumi.io"
   version "0.0.10"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?

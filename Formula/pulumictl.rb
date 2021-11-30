@@ -5,33 +5,45 @@
 class Pulumictl < Formula
   desc "A swiss army knife for Pulumi development"
   homepage "https://pulumi.io"
-  version "0.0.28"
+  version "0.0.29"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.28/pulumictl-v0.0.28-darwin-arm64.tar.gz"
-      sha256 "970bc2e94674bc2860a13425afe7f383b08376f38c3ebcf71a3986493a8a303c"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.28/pulumictl-v0.0.28-darwin-amd64.tar.gz"
-      sha256 "3f3bbd35cad0bb68a9bbba16bc626ebd81edb47ed9ab3d457f8d2d7bf8a63b54"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-darwin-amd64.tar.gz"
+      sha256 "4395aa61b572ee0bb49ed14588f3635f5321fd223f898c870fa2e21bd6437ddd"
+
+      def install
+        bin.install "pulumictl"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-darwin-arm64.tar.gz"
+      sha256 "5c85874192d7bc86e7f7b8f11aa21ea12e7fac1e81f80209fdbd5173ef966753"
+
+      def install
+        bin.install "pulumictl"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.28/pulumictl-v0.0.28-linux-arm64.tar.gz"
-      sha256 "72a90c0621ac6d29c3e502af20c611788826a0ebf6c162863ebd9857bfae3f56"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-linux-arm64.tar.gz"
+      sha256 "96560717c599e87dee31ceee150f7592cd42f856a653b0a25b495fc9ae9ce97b"
+
+      def install
+        bin.install "pulumictl"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.28/pulumictl-v0.0.28-linux-amd64.tar.gz"
-      sha256 "e0e225f15f325790f1694b70803340eeb08c599337f425498384dbd65288346a"
-    end
-  end
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-linux-amd64.tar.gz"
+      sha256 "055ddbc76a7d256ad05fd36bfd0f2d110248d38ae966426bea30bbbc4197260a"
 
-  def install
-    bin.install "pulumictl"
+      def install
+        bin.install "pulumictl"
+      end
+    end
   end
 
   test do

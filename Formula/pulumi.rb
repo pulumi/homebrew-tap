@@ -5,13 +5,13 @@
 class Pulumi < Formula
   desc "Pulumi - Modern Infrastructure as Code. Any cloud, any language "
   homepage "https://pulumi.com"
-  version "3.23.0"
+  version "3.23.1"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.23.0/pulumi-v3.23.0-darwin-x64.tar.gz"
-      sha256 "f0208100fa3d3b9061f43d5b90f3a19f7972de72f5efac04207280ef0107a613"
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.23.1/pulumi-v3.23.1-darwin-arm64.tar.gz"
+      sha256 "8ebbf98f5921fcba6532493d1d19aed2bf98a68571e1d1d8e5aafc7cf3fa95c7"
 
       def install
         bin.install Dir["*"]
@@ -22,9 +22,9 @@ class Pulumi < Formula
         (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.23.0/pulumi-v3.23.0-darwin-arm64.tar.gz"
-      sha256 "246d395e965d427f5b73aab4600f557c5b90b5ff946ba6044c67bfaa2b6e1ae9"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.23.1/pulumi-v3.23.1-darwin-x64.tar.gz"
+      sha256 "a3e4780f417eb8475784dac44861fc1f6f0b12cca1f7f2e6e5936ea2328096c5"
 
       def install
         bin.install Dir["*"]
@@ -38,9 +38,9 @@ class Pulumi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.23.0/pulumi-v3.23.0-linux-x64.tar.gz"
-      sha256 "39bc19e713cdc7752f6645fcbac10a69cf2361ce5e4df08a7b5a836192c3b5a2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.23.1/pulumi-v3.23.1-linux-arm64.tar.gz"
+      sha256 "5c1a504491802d07e2cba0ed64e997cbaa16c309b22bfec94ca57bb9326d5bd0"
 
       def install
         bin.install Dir["*"]
@@ -51,9 +51,9 @@ class Pulumi < Formula
         (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.23.0/pulumi-v3.23.0-linux-arm64.tar.gz"
-      sha256 "efdc6c4c8601ed4494df9a71bb5c0c8ba7202763370d2d670ff409343ce4d01b"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.23.1/pulumi-v3.23.1-linux-x64.tar.gz"
+      sha256 "3ff0a0affeac146d8d4ffecb63ff6ec3b918a6a591e375e4c52e749d73df3985"
 
       def install
         bin.install Dir["*"]

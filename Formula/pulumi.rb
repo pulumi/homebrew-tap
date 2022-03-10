@@ -5,13 +5,13 @@
 class Pulumi < Formula
   desc "Pulumi - Modern Infrastructure as Code. Any cloud, any language "
   homepage "https://pulumi.com"
-  version "3.26.0"
+  version "3.26.1"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.26.0/pulumi-v3.26.0-darwin-x64.tar.gz"
-      sha256 "4b19f15504ccc05ce25f469e82a5fadbde97c973a3d73f1ac5de5c0ecfa25539"
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.26.1/pulumi-v3.26.1-darwin-arm64.tar.gz"
+      sha256 "bfe28d14ec07876531ecae8aa02862c148aebb76e2d023bc15fc1a1092b571d7"
 
       def install
         bin.install Dir["*"]
@@ -22,9 +22,9 @@ class Pulumi < Formula
         (fish_completion/"pulumi.fish").write Utils.safe_popen_read("#{bin}/pulumi gen-completion fish")
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.26.0/pulumi-v3.26.0-darwin-arm64.tar.gz"
-      sha256 "ea3da546e254c66b74720ef232c7039032ad560e6a9a6cb12d0baf4cc12c6ecf"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi/releases/download/v3.26.1/pulumi-v3.26.1-darwin-x64.tar.gz"
+      sha256 "b7763af67ecef7d8e2acc8aa61cb0a75f8474fd194856cb9e64de027f2d19044"
 
       def install
         bin.install Dir["*"]
@@ -39,8 +39,8 @@ class Pulumi < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.26.0/pulumi-v3.26.0-linux-x64.tar.gz"
-      sha256 "ad7de432fcb3af116688b1c59254e3b6366e53002d35ab990e1df97d7cf21bb1"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.26.1/pulumi-v3.26.1-linux-x64.tar.gz"
+      sha256 "c0e4b0ef05dcc96f2ccd7065afc8e3d6b3b63054fd9978f271a88862664d1547"
 
       def install
         bin.install Dir["*"]
@@ -52,8 +52,8 @@ class Pulumi < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi/releases/download/v3.26.0/pulumi-v3.26.0-linux-arm64.tar.gz"
-      sha256 "12a11e1d07d588aaa8efc3212362964d1e8e36ed3dd60ad2d38e3c8612d3b0e0"
+      url "https://github.com/pulumi/pulumi/releases/download/v3.26.1/pulumi-v3.26.1-linux-arm64.tar.gz"
+      sha256 "3bb47483a25276a3b65d985712f5f143d1be878e8230a8f20ca016afa888dff6"
 
       def install
         bin.install Dir["*"]

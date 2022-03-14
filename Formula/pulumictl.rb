@@ -5,21 +5,21 @@
 class Pulumictl < Formula
   desc "A swiss army knife for Pulumi development"
   homepage "https://pulumi.io"
-  version "0.0.29"
+  version "0.0.30"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-darwin-amd64.tar.gz"
-      sha256 "4395aa61b572ee0bb49ed14588f3635f5321fd223f898c870fa2e21bd6437ddd"
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.30/pulumictl-v0.0.30-darwin-arm64.tar.gz"
+      sha256 "d386c769581e7ff7b654f14a396d4b404364fa3b59641af33af32ed31ba5fdea"
 
       def install
         bin.install "pulumictl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-darwin-arm64.tar.gz"
-      sha256 "5c85874192d7bc86e7f7b8f11aa21ea12e7fac1e81f80209fdbd5173ef966753"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.30/pulumictl-v0.0.30-darwin-amd64.tar.gz"
+      sha256 "d48c918efa64d6a5a70fb7bd9176ed4c1bfc028b8cfcbfce025a323fa19ca945"
 
       def install
         bin.install "pulumictl"
@@ -28,17 +28,17 @@ class Pulumictl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-linux-arm64.tar.gz"
-      sha256 "96560717c599e87dee31ceee150f7592cd42f856a653b0a25b495fc9ae9ce97b"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.30/pulumictl-v0.0.30-linux-amd64.tar.gz"
+      sha256 "acaedc96230e53f56db1b4608eabba42a362468d5088db3c069de6a3204779cf"
 
       def install
         bin.install "pulumictl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.29/pulumictl-v0.0.29-linux-amd64.tar.gz"
-      sha256 "055ddbc76a7d256ad05fd36bfd0f2d110248d38ae966426bea30bbbc4197260a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.30/pulumictl-v0.0.30-linux-arm64.tar.gz"
+      sha256 "6f43d5f4fc2bb7196e712a1eb61ea406c7dc0263bb461eaa7b614c83d73d2e45"
 
       def install
         bin.install "pulumictl"

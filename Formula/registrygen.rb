@@ -5,21 +5,21 @@
 class Registrygen < Formula
   desc "Creation of Pulumi Package Metadata and API Docs for use in the Pulumi Registry"
   homepage "https://pulumi.io"
-  version "0.0.6"
+  version "0.0.7"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.6/registrygen-v0.0.6-darwin-amd64.tar.gz"
-      sha256 "0909c4df5ea564daee0db68357b49d767e550063e7f4ced95c355aa590f9edcc"
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.7/registrygen-v0.0.7-darwin-arm64.tar.gz"
+      sha256 "9d382c1608dd43dd280c64773bc5bdc917e36040eb34fba755a260c886c0103f"
 
       def install
         bin.install "registrygen"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.6/registrygen-v0.0.6-darwin-arm64.tar.gz"
-      sha256 "d18bb309a4db0ebf261adab4bc5422fb9116b307a3302b4436d60ed4a13adab8"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.7/registrygen-v0.0.7-darwin-amd64.tar.gz"
+      sha256 "f2a4a192a8e6a6b2b12b958fdfa7dd9adae6ab906d90f0bf5ffa5351857ee3dc"
 
       def install
         bin.install "registrygen"
@@ -28,17 +28,17 @@ class Registrygen < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.6/registrygen-v0.0.6-linux-amd64.tar.gz"
-      sha256 "349a1fa7d813c5e7deaaa1f6a4c1462450536f0946a00dd882ca9011595655ef"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.7/registrygen-v0.0.7-linux-arm64.tar.gz"
+      sha256 "e563db0ea3f0edce0c9d28f1ad3269bd47f6b83b2a6aef212abc4780d18c355c"
 
       def install
         bin.install "registrygen"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.6/registrygen-v0.0.6-linux-arm64.tar.gz"
-      sha256 "d97c968c9222547c97eee6bd4367bdb3edeaae34b082437b6321bdad9f36df28"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.7/registrygen-v0.0.7-linux-amd64.tar.gz"
+      sha256 "8cf2517a811e7977da0243b72a9d97b2c83ccf22fb932c95a51b276019a9103f"
 
       def install
         bin.install "registrygen"

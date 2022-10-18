@@ -5,21 +5,21 @@
 class Crd2pulumi < Formula
   desc "Generate typed CustomResources in Pulumi from Kubernetes CRDs"
   homepage "https://pulumi.com"
-  version "1.2.2"
+  version "1.2.3"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.2/crd2pulumi-v1.2.2-darwin-arm64.tar.gz"
-      sha256 "56673db9fa360733d82726c5b333c6ca53d613d2ef8090ae8c602900f5e07b6b"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-darwin-arm64.tar.gz"
+      sha256 "240be294e41081dc4f17e03947b3bf131ddb2879405a0c29222fb5c6b7f64ca4"
 
       def install
         bin.install "crd2pulumi"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.2/crd2pulumi-v1.2.2-darwin-amd64.tar.gz"
-      sha256 "b277cd953682af9de8a37656ae031d0c31e467fcc7064ad49b5b7b7d1113be91"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-darwin-amd64.tar.gz"
+      sha256 "d135010eca94b458c0c0dad0abe695b9206e118603e53c29add2a0b0b484020c"
 
       def install
         bin.install "crd2pulumi"
@@ -29,16 +29,16 @@ class Crd2pulumi < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.2/crd2pulumi-v1.2.2-linux-amd64.tar.gz"
-      sha256 "d5e83aae06720f619f81039b3948e4340bbd1d55c36e172dcedb5850faed74bb"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-linux-amd64.tar.gz"
+      sha256 "330663c28c0013839e13974078dce82d0c015bc817d735e5af50209faa1f99b0"
 
       def install
         bin.install "crd2pulumi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.2/crd2pulumi-v1.2.2-linux-arm64.tar.gz"
-      sha256 "b9d6cb2bd485d57d4f73f79c58074a50c58e978d5162538ec77abdea76ae8efa"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-linux-arm64.tar.gz"
+      sha256 "cac684398bfc92e6d9343c76b65f09865b5386229f66a91979f2bc0829e17875"
 
       def install
         bin.install "crd2pulumi"

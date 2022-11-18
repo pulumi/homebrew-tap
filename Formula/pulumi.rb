@@ -11,7 +11,7 @@ class Pulumi < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/pulumi/pulumi/releases/download/v3.47.0/pulumi-v3.47.0-darwin-x64.tar.gz"
-      sha256 "85cfff0f0dc88272fe3751a3ad6c47fadc9120aa543d8d170036737238426d09"
+      sha256 "677d40659b472470f906d9aaf6e11511f13079ef6776546049f65de6fceeb889"
 
       def install
         bin.install Dir["*"]
@@ -24,7 +24,7 @@ class Pulumi < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/pulumi/pulumi/releases/download/v3.47.0/pulumi-v3.47.0-darwin-arm64.tar.gz"
-      sha256 "b40e20e19708dd9d2d4a4d17724233983e1a97b647e42279c41be579a008847c"
+      sha256 "2af85ae1c4d212c1cb3db6a6442b3f8c3ff527e0eb05ecf855fe0ae28857d432"
 
       def install
         bin.install Dir["*"]
@@ -40,7 +40,7 @@ class Pulumi < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/pulumi/pulumi/releases/download/v3.47.0/pulumi-v3.47.0-linux-arm64.tar.gz"
-      sha256 "30f8cdae5fbc4124250352d4ad3fbc9ad99c16fe7c48b2627ad070ffe3df5a49"
+      sha256 "e7d8b0a845e814f034f463325f4ee77da2667349de7067b1f751b84a5487b2ba"
 
       def install
         bin.install Dir["*"]
@@ -53,7 +53,7 @@ class Pulumi < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/pulumi/pulumi/releases/download/v3.47.0/pulumi-v3.47.0-linux-x64.tar.gz"
-      sha256 "42c2031d13e3a5cbd616647f824caf211483815ee6ebecc24e1a3bc584cbdacb"
+      sha256 "ace2490451d70bced46a9dba3346f543092ba8669fc3b14e6f1b63899bb8b62e"
 
       def install
         bin.install Dir["*"]

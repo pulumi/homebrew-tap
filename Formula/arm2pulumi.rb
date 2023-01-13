@@ -5,21 +5,21 @@
 class Arm2pulumi < Formula
   desc "A tool to convert Azure ARM Templates to Pulumi programs"
   homepage "https://pulumi.com"
-  version "1.91.0"
+  version "1.92.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.91.0/arm2pulumi-v1.91.0-darwin-arm64.tar.gz"
-      sha256 "a99a6eba3327e5241a196f47fbd26f9410689ffae344f7b556489127572a2b5c"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.92.0/arm2pulumi-v1.92.0-darwin-x64.tar.gz"
+      sha256 "9e682cdf08815fa098627859aa9cef7bd6556f7b1e15cbfb995a0964592b104e"
 
       def install
         bin.install "arm2pulumi"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.91.0/arm2pulumi-v1.91.0-darwin-x64.tar.gz"
-      sha256 "b8f68c08f652189e3f2da60be23c912181da8f5b6502888fcd0d4b5f6da28f32"
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.92.0/arm2pulumi-v1.92.0-darwin-arm64.tar.gz"
+      sha256 "76330bf88efcc1a1a83b83c52d18b326492cebd5ee845ba251a2c74e174d1251"
 
       def install
         bin.install "arm2pulumi"
@@ -29,16 +29,16 @@ class Arm2pulumi < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.91.0/arm2pulumi-v1.91.0-linux-x64.tar.gz"
-      sha256 "8c6352ade5c23ba7f1308e584cdfb876f24f11317f2455bd870a0706f952acae"
+      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.92.0/arm2pulumi-v1.92.0-linux-x64.tar.gz"
+      sha256 "e875f74cfe3d178c8ab24aa23862d348c07e71304ae4aba4910f140e1665360a"
 
       def install
         bin.install "arm2pulumi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.91.0/arm2pulumi-v1.91.0-linux-arm64.tar.gz"
-      sha256 "b63dc10d5ab3974b744fee6e07e0d74d60d256547c79c76ad2ac04e088ab168a"
+      url "https://github.com/pulumi/pulumi-azure-native/releases/download/v1.92.0/arm2pulumi-v1.92.0-linux-arm64.tar.gz"
+      sha256 "ba196bb4e0e29b7143e64ffc6fa0a6c4ac504409d6206f8d284cafed7931820a"
 
       def install
         bin.install "arm2pulumi"

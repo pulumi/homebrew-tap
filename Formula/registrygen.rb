@@ -5,21 +5,21 @@
 class Registrygen < Formula
   desc "Creation of Pulumi Package Metadata and API Docs for use in the Pulumi Registry"
   homepage "https://pulumi.io"
-  version "0.0.12"
+  version "0.0.13"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.12/registrygen-v0.0.12-darwin-amd64.tar.gz"
-      sha256 "858787387081b2ee8302120bbd7eb29a14320b9cd335e9b89d31b3b6425724cf"
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.13/registrygen-v0.0.13-darwin-amd64.tar.gz"
+      sha256 "ac31dbff284e4bc230b05e69fe1d3792bdc28cca5f66635fd2fd4ef4e2ef3615"
 
       def install
         bin.install "registrygen"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.12/registrygen-v0.0.12-darwin-arm64.tar.gz"
-      sha256 "405632b5acd1dbfdea8e5ed1eba424873790b432f8e3e17de904be2ead19ba86"
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.13/registrygen-v0.0.13-darwin-arm64.tar.gz"
+      sha256 "1e451d86e16a60f7263ce4e82c308b56eff742e0ccc4198eb24d57b181828c2f"
 
       def install
         bin.install "registrygen"
@@ -29,16 +29,16 @@ class Registrygen < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.12/registrygen-v0.0.12-linux-arm64.tar.gz"
-      sha256 "c4d1bc2e7207987241b3a48910ea7cd89230711d54d64b5007bc7b50c69bfa20"
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.13/registrygen-v0.0.13-linux-arm64.tar.gz"
+      sha256 "6ffa8686fa215c0303a841c95ab1d7d7611d333262cd4c71b48dedb5f8439a59"
 
       def install
         bin.install "registrygen"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/registrygen/releases/download/v0.0.12/registrygen-v0.0.12-linux-amd64.tar.gz"
-      sha256 "7067f07c5f17bcd86cdeabca2a9012575abde30ee67cf3ed6e71667b18eba726"
+      url "https://github.com/pulumi/registrygen/releases/download/v0.0.13/registrygen-v0.0.13-linux-amd64.tar.gz"
+      sha256 "da65e300bae1238411da2f06914f7b4ffef31741efaa2d9e5396c73a5a496796"
 
       def install
         bin.install "registrygen"

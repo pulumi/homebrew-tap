@@ -5,21 +5,21 @@
 class Crd2pulumi < Formula
   desc "Generate typed CustomResources in Pulumi from Kubernetes CRDs"
   homepage "https://pulumi.com"
-  version "1.2.3"
+  version "1.2.4"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-darwin-arm64.tar.gz"
-      sha256 "240be294e41081dc4f17e03947b3bf131ddb2879405a0c29222fb5c6b7f64ca4"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.4/crd2pulumi-v1.2.4-darwin-arm64.tar.gz"
+      sha256 "a3727ea8869c21f085b65830774ca5fd6ac8e3b25e7a069f9bb0176d83673251"
 
       def install
         bin.install "crd2pulumi"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-darwin-amd64.tar.gz"
-      sha256 "d135010eca94b458c0c0dad0abe695b9206e118603e53c29add2a0b0b484020c"
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.4/crd2pulumi-v1.2.4-darwin-amd64.tar.gz"
+      sha256 "1fab72587afc85403084c0c6b6b6b68a5d24e8300601d0ebec0d16c1c8486f5c"
 
       def install
         bin.install "crd2pulumi"
@@ -28,17 +28,17 @@ class Crd2pulumi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-linux-amd64.tar.gz"
-      sha256 "330663c28c0013839e13974078dce82d0c015bc817d735e5af50209faa1f99b0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.4/crd2pulumi-v1.2.4-linux-arm64.tar.gz"
+      sha256 "e84304f3103b8c3c9db26e32225b084eac1797a87d815e52b8ab4587c6da690c"
 
       def install
         bin.install "crd2pulumi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.3/crd2pulumi-v1.2.3-linux-arm64.tar.gz"
-      sha256 "cac684398bfc92e6d9343c76b65f09865b5386229f66a91979f2bc0829e17875"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/crd2pulumi/releases/download/v1.2.4/crd2pulumi-v1.2.4-linux-amd64.tar.gz"
+      sha256 "171792eeb401989e660dd75f01cdf450ba4c605c31d629af82a0b41375d63965"
 
       def install
         bin.install "crd2pulumi"

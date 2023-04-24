@@ -5,21 +5,21 @@
 class Cf2pulumi < Formula
   desc "A tool to convert CloudFormation Templates to Pulumi programs"
   homepage "https://pulumi.com"
-  version "0.58.0"
+  version "0.59.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.58.0/cf2pulumi-v0.58.0-darwin-x64.tar.gz"
-      sha256 "72206c08d6142cbf9a36ed5a258f344f7c9aeab7b089ebec03dbccb2c2d181d8"
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.59.0/cf2pulumi-v0.59.0-darwin-x64.tar.gz"
+      sha256 "5068ca93af7877409e209d3607020d219b6a105890a711c5f3bcd3675fdc2682"
 
       def install
         bin.install "cf2pulumi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.58.0/cf2pulumi-v0.58.0-darwin-arm64.tar.gz"
-      sha256 "dcd6e72ec83d28130d2dbae6e60bb64107c683016f6bc8cfecaa0846b1ba2463"
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.59.0/cf2pulumi-v0.59.0-darwin-arm64.tar.gz"
+      sha256 "1b200bb7539df08ad1e05d1297737c664ed1623408d193fda8e46013ba0ee79d"
 
       def install
         bin.install "cf2pulumi"
@@ -29,16 +29,16 @@ class Cf2pulumi < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.58.0/cf2pulumi-v0.58.0-linux-x64.tar.gz"
-      sha256 "03abe1a70c8b6ab7e5fbdade36a5b877f70a2c9edcb6452ba63c0273dbec7bdc"
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.59.0/cf2pulumi-v0.59.0-linux-x64.tar.gz"
+      sha256 "726184f71d65ada957226c43f3201cbe37694543f4c12a62ce55dec3595005c3"
 
       def install
         bin.install "cf2pulumi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.58.0/cf2pulumi-v0.58.0-linux-arm64.tar.gz"
-      sha256 "5cfd37bb4ebee80c3931f26482aa0d7e064ae4b9d12eca34be9dda6b83102054"
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.59.0/cf2pulumi-v0.59.0-linux-arm64.tar.gz"
+      sha256 "b600ce084be965fdd9e829d5659cf4ad8456234016cf4de88b92467e9445cc62"
 
       def install
         bin.install "cf2pulumi"

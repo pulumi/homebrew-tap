@@ -5,28 +5,45 @@
 class Tf2pulumi < Formula
   desc "A tool to convert Terraform projects to Pulumi programs"
   homepage "https://pulumi.io"
-  version "0.11.1"
+  version "0.12.0"
   license "Apache-2.0"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-darwin-x64.tar.gz"
-    sha256 "6c2fea8bc21bbdbb39d6cc6545dc9d38074279ef2f2adaf2fd457fc9e5c520d3"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-darwin-arm64.tar.gz"
-    sha256 "46cfff9c70f128725f3df6e0b7e449ba520ad323eaa497919e20ba94e55ca297"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-linux-x64.tar.gz"
-    sha256 "5d91f46f659ca4ccf65385f4154e9915e1ff33f85ea201bcc57349db49e9f12d"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pulumi/tf2pulumi/releases/download/v0.11.1/tf2pulumi-v0.11.1-linux-arm64.tar.gz"
-    sha256 "201f3d8f1974cac8f88b2e1717459fddee8891a14a4d512e8dbff138f11f935c"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.12.0/tf2pulumi-v0.12.0-darwin-arm64.tar.gz"
+      sha256 "464800b186d584e74bfa9cffa2cff05f45dd98e8bdd72f98d32682324e5dcb22"
+
+      def install
+        bin.install "tf2pulumi"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.12.0/tf2pulumi-v0.12.0-darwin-x64.tar.gz"
+      sha256 "0dce76b5c78073df4795d8df076ef34eab1226f8338262fea3c960a0f0a91c97"
+
+      def install
+        bin.install "tf2pulumi"
+      end
+    end
   end
 
-  def install
-    bin.install "tf2pulumi"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.12.0/tf2pulumi-v0.12.0-linux-x64.tar.gz"
+      sha256 "f2d0d1b377140d1db0a8d944e55fd78af787769ddb1025134697e5ce8131781e"
+
+      def install
+        bin.install "tf2pulumi"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/tf2pulumi/releases/download/v0.12.0/tf2pulumi-v0.12.0-linux-arm64.tar.gz"
+      sha256 "2da8b1b4cecab0a25514351a776aa3c35d7677e3805e8b2408d7bfbb2f763b71"
+
+      def install
+        bin.install "tf2pulumi"
+      end
+    end
   end
 
   test do

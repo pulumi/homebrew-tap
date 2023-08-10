@@ -7,6 +7,7 @@ class Tf2pulumi < Formula
   homepage "https://pulumi.io"
   version "0.12.0"
   license "Apache-2.0"
+  deprecate! date: "2023-06-18", because: "tf2pulumi is deprecated and no longer maintained. The functionality is now available from the Pulumi CLI's pulumi convert --from terraform command."
 
   on_macos do
     if Hardware::CPU.arm?

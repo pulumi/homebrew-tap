@@ -5,21 +5,21 @@
 class Kube2pulumi < Formula
   desc "Convert Kubernetes manifests to Pulumi code"
   homepage "https://pulumi.io"
-  version "0.0.12"
+  version "0.0.13"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.12/kube2pulumi-v0.0.12-darwin-amd64.tar.gz"
-      sha256 "3d0591e73f7d9ed2813c8d0536b042630b64516aa5ed172940fc50b35fb31f93"
+      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.13/kube2pulumi-v0.0.13-darwin-amd64.tar.gz"
+      sha256 "6b5ee96cc0b51ee129040169f3c549d4de1db1ec6526b8f1d2535457596d1ff1"
 
       def install
         bin.install "kube2pulumi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.12/kube2pulumi-v0.0.12-darwin-arm64.tar.gz"
-      sha256 "94d27f5b85e209f20bfbb68a0c6eb85c783b070306e10dda4c1c6bb9898f4f66"
+      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.13/kube2pulumi-v0.0.13-darwin-arm64.tar.gz"
+      sha256 "d41f3339b6106b9b006400f74be92b1a090b66e941ab5eb53f37cd3503c123ff"
 
       def install
         bin.install "kube2pulumi"
@@ -29,16 +29,16 @@ class Kube2pulumi < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.12/kube2pulumi-v0.0.12-linux-amd64.tar.gz"
-      sha256 "67063c29eb74af538e19647aa5233a07322494e4f0f2b8830df9291c508974be"
+      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.13/kube2pulumi-v0.0.13-linux-amd64.tar.gz"
+      sha256 "cc511fa59c1569d991632c9a9be5cc14b59de059930a011561ffdf4e463ea85a"
 
       def install
         bin.install "kube2pulumi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.12/kube2pulumi-v0.0.12-linux-arm64.tar.gz"
-      sha256 "2bb98f1ed39e5727eb5c6a3bf4dd917921422e8519ec570cf54524504c4408d8"
+      url "https://github.com/pulumi/kube2pulumi/releases/download/v0.0.13/kube2pulumi-v0.0.13-linux-arm64.tar.gz"
+      sha256 "5ddfdf3db741bf0a75c75b25da84e2ea5b38de1c5138d91debb0c7ddcfec91e8"
 
       def install
         bin.install "kube2pulumi"

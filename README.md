@@ -16,10 +16,14 @@ You can download any of the products below:
 
 ```sh
 # Formulae
-brew install pulumi/tap/pulumi
+brew install pulumi/tap/arm2pulumi
+brew install pulumi/tap/cf2pulumi
 brew install pulumi/tap/crd2pulumi
+brew install pulumi/tap/esc
 brew install pulumi/tap/kube2pulumi
+brew install pulumi/tap/pulumi
 brew install pulumi/tap/pulumictl
+brew install pulumi/tap/registrygen
 brew install pulumi/tap/tf2pulumi
 ```
 

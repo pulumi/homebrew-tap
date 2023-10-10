@@ -5,21 +5,21 @@
 class Pulumictl < Formula
   desc "A swiss army knife for Pulumi development"
   homepage "https://pulumi.io"
-  version "0.0.44"
+  version "0.0.45"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.44/pulumictl-v0.0.44-darwin-amd64.tar.gz"
-      sha256 "31543d4a01d6f98aaa969276c3bfde67877774c074704c74c96f278dd4d248b5"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.45/pulumictl-v0.0.45-darwin-amd64.tar.gz"
+      sha256 "6f64833aa4dc4cd6a7fd84f4d5d18fccc9cdfacf28a6668c19f11e7db77c017e"
 
       def install
         bin.install "pulumictl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.44/pulumictl-v0.0.44-darwin-arm64.tar.gz"
-      sha256 "ae7d8ed786331b4e74d8ed1bd6cdbaa93d83ba180deb1729ff27c5cd9ba0205c"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.45/pulumictl-v0.0.45-darwin-arm64.tar.gz"
+      sha256 "96714fc991a9b5246dd2759a2204841a9ea870fa5265b0dd73bc550951e55098"
 
       def install
         bin.install "pulumictl"
@@ -29,16 +29,16 @@ class Pulumictl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.44/pulumictl-v0.0.44-linux-arm64.tar.gz"
-      sha256 "4b3c77127c704819bb6234665e1af4906876e9b14952ee153ed549e3d03bfa3e"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.45/pulumictl-v0.0.45-linux-arm64.tar.gz"
+      sha256 "1fea926c3a703d6dcfbd2846eeb6fdd347f7ce18a8d495a22e143450e841aa60"
 
       def install
         bin.install "pulumictl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.44/pulumictl-v0.0.44-linux-amd64.tar.gz"
-      sha256 "637e3bd2b29935b1003d2975de3366a1d5db919731cb97010db89fadbf540a92"
+      url "https://github.com/pulumi/pulumictl/releases/download/v0.0.45/pulumictl-v0.0.45-linux-amd64.tar.gz"
+      sha256 "9ffa426ae650dce8b38fd42828b7e4a62620ced48ac8d2d650296ace4aa112d1"
 
       def install
         bin.install "pulumictl"

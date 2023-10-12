@@ -5,21 +5,21 @@
 class Esc < Formula
   desc "Pulumi ESC - Manage Environments, Secrets, and Configuration"
   homepage "https://pulumi.com"
-  version "0.5.3"
+  version "0.5.4"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/esc/releases/download/v0.5.3/esc-v0.5.3-darwin-arm64.tar.gz"
-      sha256 "e4512067b3bbba2572780cdb8ff50d5348b50e3a158838ed86e552a839f44bcc"
+      url "https://github.com/pulumi/esc/releases/download/v0.5.4/esc-v0.5.4-darwin-arm64.tar.gz"
+      sha256 "1ef1e694484eddd157d8bb14159750406db13bbc20b170af4a7e952f7c9cd09f"
 
       def install
         bin.install "esc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/esc/releases/download/v0.5.3/esc-v0.5.3-darwin-x64.tar.gz"
-      sha256 "39c6843c161c51d82ef2637a175a9e4f5b1e4419887207a0c1942f5f96982274"
+      url "https://github.com/pulumi/esc/releases/download/v0.5.4/esc-v0.5.4-darwin-x64.tar.gz"
+      sha256 "a55eabcdd7a3ca96b7f1695541543ae026232e60f3f903a3e8b2a27454415d80"
 
       def install
         bin.install "esc"
@@ -29,16 +29,16 @@ class Esc < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/esc/releases/download/v0.5.3/esc-v0.5.3-linux-arm64.tar.gz"
-      sha256 "8cac52c9c02193d74d1a149fe8c5301ffb3614acd667b75706c3ad4011346389"
+      url "https://github.com/pulumi/esc/releases/download/v0.5.4/esc-v0.5.4-linux-arm64.tar.gz"
+      sha256 "5b8cd51a589eab7e9ffd24676438fc07c4bded387f6e35665c9af95f318e45f7"
 
       def install
         bin.install "esc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/esc/releases/download/v0.5.3/esc-v0.5.3-linux-x64.tar.gz"
-      sha256 "e5f246dade118bfac7e38c62f3029ae8b1788831fa26243f087a87322f1c3c31"
+      url "https://github.com/pulumi/esc/releases/download/v0.5.4/esc-v0.5.4-linux-x64.tar.gz"
+      sha256 "f6f7edeb59aa546ab1cf01b5a78c6377734f171b8386f0d56b807af2a8eae0a6"
 
       def install
         bin.install "esc"

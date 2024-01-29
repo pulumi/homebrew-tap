@@ -22,8 +22,8 @@ jobs:
         id: vars
         run: |
           which pulumi
-          echo ::set-output name=installed-version::$(pulumi version)
-          echo ::set-output name=expected-version::v$(curl -sS https://www.pulumi.com/latest-version)
+          echo installed-version=$(pulumi version) >> "$GITHUB_OUTPUT"
+          echo expected-version=v$(curl -sS https://www.pulumi.com/latest-version) >> "$GITHUB_OUTPUT"
       - name: Error if incorrect version found
         if: steps.vars.outputs.expected-version != steps.vars.outputs.installed-version
         run: |

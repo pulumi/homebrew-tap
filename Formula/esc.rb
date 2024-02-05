@@ -5,21 +5,21 @@
 class Esc < Formula
   desc "Pulumi ESC - Manage Environments, Secrets, and Configuration"
   homepage "https://pulumi.com"
-  version "0.7.0"
+  version "0.8.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/esc/releases/download/v0.7.0/esc-v0.7.0-darwin-arm64.tar.gz"
-      sha256 "e25e08ffe89867a483fb073c2ad526be0285a31604edd7314db45b4033cda927"
+      url "https://github.com/pulumi/esc/releases/download/v0.8.0/esc-v0.8.0-darwin-arm64.tar.gz"
+      sha256 "4613820d38a030e5bbd63b7a58e2413bd8cb10e0334b3b9e6e6848e38d317056"
 
       def install
         bin.install "esc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/esc/releases/download/v0.7.0/esc-v0.7.0-darwin-x64.tar.gz"
-      sha256 "3e149b4286ed3b36204fc056ed99555108259a9ecc9c2442a42b1b7351dbde4d"
+      url "https://github.com/pulumi/esc/releases/download/v0.8.0/esc-v0.8.0-darwin-x64.tar.gz"
+      sha256 "a8ec40b9fdabb93cb3c415f8920aab65dc4f6e30f54613331264dff465c72f13"
 
       def install
         bin.install "esc"
@@ -28,17 +28,17 @@ class Esc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/esc/releases/download/v0.7.0/esc-v0.7.0-linux-arm64.tar.gz"
-      sha256 "628aee7cdc5aab13e24cdb5d98f01fae658d8a83d11a28dded7214072a150d16"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/esc/releases/download/v0.8.0/esc-v0.8.0-linux-x64.tar.gz"
+      sha256 "33c541def966f52483f8fc69b0633bf6f3848d23c74820cbf912b8a5c2ef62c7"
 
       def install
         bin.install "esc"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/esc/releases/download/v0.7.0/esc-v0.7.0-linux-x64.tar.gz"
-      sha256 "5ad5db5545c102420994e04460fd410189ad2d4ec9118be1d7f9415431e1120a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/esc/releases/download/v0.8.0/esc-v0.8.0-linux-arm64.tar.gz"
+      sha256 "58ec7e9d258fa6ad8f7b160666e4a14345558b21626ef36497fd8df70267ed12"
 
       def install
         bin.install "esc"

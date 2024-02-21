@@ -5,21 +5,21 @@
 class Cf2pulumi < Formula
   desc "A tool to convert CloudFormation Templates to Pulumi programs"
   homepage "https://pulumi.com"
-  version "0.96.0"
+  version "0.97.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.96.0/cf2pulumi-v0.96.0-darwin-x64.tar.gz"
-      sha256 "a492b3ff3cd9312043c145894b382c0f4781cb7765edf742f0edfeda91a13853"
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.97.0/cf2pulumi-v0.97.0-darwin-x64.tar.gz"
+      sha256 "50272c4a900f42dc4b4f238d366dec5063c3cfcc36872ed5eadf5ae0530a6bc5"
 
       def install
         bin.install "cf2pulumi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.96.0/cf2pulumi-v0.96.0-darwin-arm64.tar.gz"
-      sha256 "0c9f2d9f1280a684b77c253b582613aaf760b32aa45611791eaf669a0b9fa89c"
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.97.0/cf2pulumi-v0.97.0-darwin-arm64.tar.gz"
+      sha256 "2841afc4580f3ad4b350ee13c37123b358952208dad3572db0ad71eb05bcd52a"
 
       def install
         bin.install "cf2pulumi"
@@ -28,17 +28,17 @@ class Cf2pulumi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.96.0/cf2pulumi-v0.96.0-linux-x64.tar.gz"
-      sha256 "9326788d6f465f2f07e03ebcfe6a40be422bfc6452777f03b451739c3c0f39c8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.97.0/cf2pulumi-v0.97.0-linux-arm64.tar.gz"
+      sha256 "54dec53105d05e8b229e92509a7d063b4d5b7b5fbf496f7374a7487c3db7e4cf"
 
       def install
         bin.install "cf2pulumi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.96.0/cf2pulumi-v0.96.0-linux-arm64.tar.gz"
-      sha256 "c070b79405a107e441966b1336a5eb5cdf254595f7b0994219ec4113d28f0ac5"
+    if Hardware::CPU.intel?
+      url "https://github.com/pulumi/pulumi-aws-native/releases/download/v0.97.0/cf2pulumi-v0.97.0-linux-x64.tar.gz"
+      sha256 "83125a95eee361851261e16aee7babbeb6cd6f7c6604ba3bf906fed0c25a1c24"
 
       def install
         bin.install "cf2pulumi"

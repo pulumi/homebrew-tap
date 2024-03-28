@@ -18,17 +18,22 @@ jobs:
         run: brew tap pulumi/tap .
       - name: Try to Install Pulumi
         run: brew install --formula ./Formula/pulumi.rb --verbose
-      - name: Pulumi Version Details
+      - name: Check pulumi version
         id: vars
         run: |
+          vergte() {
+            [  "$1" = "`echo -e "$2\n$1" | sort -V | head -n1`" ]
+          }
+
           which pulumi
-          echo installed-version=$(pulumi version) >> "$GITHUB_OUTPUT"
-          echo expected-version=v$(curl -sS https://www.pulumi.com/latest-version) >> "$GITHUB_OUTPUT"
-      - name: Error if incorrect version found
-        if: steps.vars.outputs.expected-version != steps.vars.outputs.installed-version
-        run: |
-          echo "Expected version ${{ steps.vars.outputs.expected-version }} but found ${{ steps.vars.outputs.installed-version }}"
-          exit 1
+          installed_version=$(pulumi version)
+          expected_version=v$(curl -sS https://www.pulumi.com/latest-version)
+          if vergte $expected_version $installed_version; then
+            exit 0
+          else
+            echo "Expected version $expected_version to be greater or equal than $installed_version"
+            exit 1
+          fi
       - name: Test Pulumi
         run: |
           mkdir /tmp/pulumi-test

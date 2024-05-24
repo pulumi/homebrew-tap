@@ -3,17 +3,17 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Add Pulumi Homebrew Tap
         run: brew tap pulumi/tap .
       - name: Try to Install Pulumi

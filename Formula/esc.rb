@@ -5,21 +5,21 @@
 class Esc < Formula
   desc "Pulumi ESC - Manage Environments, Secrets, and Configuration"
   homepage "https://pulumi.com"
-  version "0.8.3"
+  version "0.9.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pulumi/esc/releases/download/v0.8.3/esc-v0.8.3-darwin-arm64.tar.gz"
-      sha256 "47bee7e5e2ce98745cb035f8c3da698333ac6e3f2248159fdb12f445d09fb124"
+    on_intel do
+      url "https://github.com/pulumi/esc/releases/download/v0.9.0/esc-v0.9.0-darwin-x64.tar.gz"
+      sha256 "7910a87beceab57287ab73e419bf34d64e5f3ee0f5fd4b86a12f2aa2c179ff64"
 
       def install
         bin.install "esc"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/esc/releases/download/v0.8.3/esc-v0.8.3-darwin-x64.tar.gz"
-      sha256 "7168432c2fe0d10fb295299d7fed30cb7d0100e96a77f4d8f9d97bb47c3a3e92"
+    on_arm do
+      url "https://github.com/pulumi/esc/releases/download/v0.9.0/esc-v0.9.0-darwin-arm64.tar.gz"
+      sha256 "738217536e7989ded380fa822bb256cb8104f2badcad2f0691ef48726d16fca5"
 
       def install
         bin.install "esc"
@@ -28,20 +28,24 @@ class Esc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pulumi/esc/releases/download/v0.8.3/esc-v0.8.3-linux-x64.tar.gz"
-      sha256 "941d8522ba6886a61fa475e6c6c654edb4bc867ac962d9310871070261ee07d5"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pulumi/esc/releases/download/v0.9.0/esc-v0.9.0-linux-x64.tar.gz"
+        sha256 "470885f45d1a23f1cb3c5ada46977ac667bbb369b9a14908177f3a71fad419bd"
 
-      def install
-        bin.install "esc"
+        def install
+          bin.install "esc"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pulumi/esc/releases/download/v0.8.3/esc-v0.8.3-linux-arm64.tar.gz"
-      sha256 "30bcd95263bbe83906d2ad23f9a8ec824ebbe273bf86db2b8b363f71dacacea3"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pulumi/esc/releases/download/v0.9.0/esc-v0.9.0-linux-arm64.tar.gz"
+        sha256 "04976a79b4380a49fffa949c6bdd405aa339ae03626ee930ee205bde77a3c5c2"
 
-      def install
-        bin.install "esc"
+        def install
+          bin.install "esc"
+        end
       end
     end
   end

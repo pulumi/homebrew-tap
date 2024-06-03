@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@main
         with:
           token: ${{ secrets.PULUMI_BOT_TOKEN }}
+          fetch-depth: 0
       - name: Push to `master`
         run: |
           git push origin HEAD:master

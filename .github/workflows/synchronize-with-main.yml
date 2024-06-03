@@ -18,4 +18,4 @@ jobs:
           token: ${{ secrets.PULUMI_BOT_TOKEN }}
       - name: Push to `master`
         run: |
-          git push origin HEAD:main
+          git push origin HEAD:master

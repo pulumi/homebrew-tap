@@ -5,21 +5,21 @@
 class Esc < Formula
   desc "Pulumi ESC - Manage Environments, Secrets, and Configuration"
   homepage "https://pulumi.com"
-  version "0.15.0"
+  version "0.16.0"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/pulumi/esc/releases/download/v0.15.0/esc-v0.15.0-darwin-x64.tar.gz"
-      sha256 "1022d92274a36a3606087b7209fa3fc2dd40f218f74df0c704e0218ee3bbbe44"
+      url "https://github.com/pulumi/esc/releases/download/v0.16.0/esc-v0.16.0-darwin-x64.tar.gz"
+      sha256 "b1ac64411d45d366e5db9ea8b3ba4157c71bd9c82fe114711ecf0f00ee4ba5d6"
 
       def install
         bin.install "esc"
       end
     end
     on_arm do
-      url "https://github.com/pulumi/esc/releases/download/v0.15.0/esc-v0.15.0-darwin-arm64.tar.gz"
-      sha256 "30d18cc84d90c07c078ddf507240b386cf7a57675d33819781019064423207de"
+      url "https://github.com/pulumi/esc/releases/download/v0.16.0/esc-v0.16.0-darwin-arm64.tar.gz"
+      sha256 "babe05183a72a71ef38eea08ea2f560ff11b707899ff1d8f7b78e61cd92a1def"
 
       def install
         bin.install "esc"
@@ -30,8 +30,8 @@ class Esc < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pulumi/esc/releases/download/v0.15.0/esc-v0.15.0-linux-x64.tar.gz"
-        sha256 "49f84ee821052b0273dbf291efaf4217801e8137712bbd72c76d267bd054b1f0"
+        url "https://github.com/pulumi/esc/releases/download/v0.16.0/esc-v0.16.0-linux-x64.tar.gz"
+        sha256 "b445bd0940f9e2c2f35cbad3eeb3fcc7833c3953f829ac40a8e2bb453103c3cc"
 
         def install
           bin.install "esc"
@@ -40,8 +40,8 @@ class Esc < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pulumi/esc/releases/download/v0.15.0/esc-v0.15.0-linux-arm64.tar.gz"
-        sha256 "76c25856c25165eaedbcdfe173fdec9946f8491da1548d3cff295e7943b201ec"
+        url "https://github.com/pulumi/esc/releases/download/v0.16.0/esc-v0.16.0-linux-arm64.tar.gz"
+        sha256 "73a53734fc2347244be28e6da933a8f6a666f59b748a902225077b60c60fa3bb"
 
         def install
           bin.install "esc"

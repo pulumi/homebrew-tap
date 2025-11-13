@@ -18,7 +18,7 @@ jobs:
       - name: Add Pulumi Homebrew Tap
         run: brew tap pulumi/tap .
       - name: Try to Install Pulumi
-        run: brew install --formula ./Formula/pulumi.rb --verbose
+        run: brew install pulumi/tap/pulumi
       - name: Check pulumi version
         id: vars
         run: |
